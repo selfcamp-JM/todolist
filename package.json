@@ -2,7 +2,7 @@
   "name": "todolist",
   "version": "0.1.0",
   "private": true,
-  "homepages": "https://selfcamp-jm.github.io/todolist/",
+  "homepage": "https://selfcamp-jm.github.io/todolist/",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "jquery": "^1.9.1",
