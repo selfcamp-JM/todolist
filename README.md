@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[YOU CAN REACH TO DEPLOYED PROJECT](https://selfcamp-jm.github.io/todolist/).
+YOU CAN REACH TO DEPLOYED PROJECT [LINK](https://selfcamp-jm.github.io/todolist/).
 
 ## Available Scripts
 
