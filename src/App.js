@@ -7,7 +7,7 @@ import uuid from "uuid";
 class App extends Component {
   state ={
     items:[],
-    id:uuid,
+    id:uuid(),
     item:"",
     editItem:false
   };
@@ -29,7 +29,7 @@ class App extends Component {
       this.setState({
         items: updatedItems,
         item: "",
-        id: uuid,
+        id: uuid(),
         editItem:false
       })
 
@@ -40,11 +40,24 @@ class App extends Component {
       items:[]
     })
   }
+  handleDelete =id=>{
+    const filteredItem = this.state.items.filter(item=> item.id !==id);
+    this.setState({items:filteredItem})
+  } 
 
-  hamdleDelete =(id)=>{
-      const filterrdItem = this.state.items.filter(item=>item.id !==id)
-      this.setState({items:filterrdItem})
-    } 
+  handleEdit= id=>{
+    const filteredItem = this.state.items.filter(item=> item.id !==id);  
+    
+    const selectedItem = this.state.items.find(item => item.id === id);
+    this.setState({
+      items:filteredItem,
+      item:selectedItem.title,
+      editItem:true,
+
+
+    })
+  
+  }
   render() {
     return (
       <div className="container">
@@ -53,9 +66,13 @@ class App extends Component {
          <h3 className="text-capitilize text-center">Todo Input</h3>       
         < Todoinput item ={this.state.item} 
           handleChange = {this.handleChange}
-          handleSubmit = {this.handleSubmit}/>
+          handleSubmit = {this.handleSubmit}
+          editItem = {this.state.editItem}/>
        < Todolist items = {this.state.items}
-          clearList = {this.clearList}/>
+          clearList = {this.clearList} 
+          handleDelete = {this.handleDelete}
+          handleEdit ={this.handleEdit}
+          />
       </div>
       </div>
       </div>
